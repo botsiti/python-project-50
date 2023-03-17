@@ -1,11 +1,12 @@
 import json
 import itertools
-j1 = json.load(open('file1.json'))
-j2 = json.load(open('file2.json'))
+# j1 = json.load(open('file1.json'))
+# j2 = json.load(open('file2.json'))
+
 
 def generate_diff(file1, file2):
-    # file1 = json.load(open(fl1))
-    # file2 = json.load(open(fl2))
+    file1 = json.load(open(fl1)) # Правильно ли это? Просто надо же как-то открыть json файлы
+    file2 = json.load(open(fl2))
     keys = file1.keys() | file2.keys()
     lines = []
     for key in sorted(keys):
@@ -28,7 +29,7 @@ def generate_diff(file1, file2):
 
 
 
-print(generate_diff(j1, j2))
+#print(generate_diff(j1, j2))
 
 
 
