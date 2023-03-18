@@ -5,7 +5,7 @@ import itertools
 
 
 def generate_diff(file1, file2):
-    file1 = json.load(open(file1)) # Правильно ли это? Просто надо же как-то открыть json файлы
+    file1 = json.load(open(file1))
     file2 = json.load(open(file2))
     keys = file1.keys() | file2.keys()
     lines = []
