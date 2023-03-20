@@ -23,15 +23,3 @@ def generate_diff(file1, file2):
             lines.append(f'   {key}: {file2[key]}')
         result = itertools.chain('{', lines, '}')
     return '\n'.join(result)
-
-
-
-
-
-
-#print(generate_diff(j1, j2))
-
-
-
-
-
