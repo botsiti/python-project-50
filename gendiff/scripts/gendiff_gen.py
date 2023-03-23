@@ -3,15 +3,20 @@ import itertools
 import yaml
 
 
-def generate_diff(file1, file2):  # noqa: C901
-    if file1.endswith('.json') and file2.endswith('.json'):
+def file_opener(file1, file2):
+    if file1.endswith('.json'):
         file1 = json.load(open(file1))
-        file2 = json.load(open(file2))
-    elif file1.endswith('.yml') or file1.endswith('.yaml') \
-            and file2.endswith('.yaml') or file2.endswith('yml'):
+    else:
         file1 = yaml.safe_load(open(file1, 'r'))
+    if file2.endswith('.json'):
+        file2 = json.load(open(file2))
+    else:
         file2 = yaml.safe_load(open(file2, 'r'))
+    return file1, file2
 
+
+def generate_diff(file1, file2):
+    file1, file2 = file_opener(file1, file2)
     keys = file1.keys() | file2.keys()
     lines = []
     for key in sorted(keys):
