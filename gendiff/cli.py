@@ -8,7 +8,7 @@ def cli_diff():
     parser.add_argument('first_file')
     parser.add_argument('second_file')
     parser.add_argument('-f', '--format',
-                        # default='stylish',
+                        default='stylish',
+                        type=str,
                         help='set format of output')
-    args = parser.parse_args()
-    return args.first_file, args.second_file
+    return parser.parse_args()

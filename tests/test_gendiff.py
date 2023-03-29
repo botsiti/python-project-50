@@ -1,4 +1,4 @@
-from gendiff.gendiff_gen import generate_diff
+from gendiff.generate_diff import generate_diff
 
 
 fl1 = 'tests/fixtures/file1.json'
