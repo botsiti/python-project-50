@@ -1,9 +1,9 @@
 {
- - follow: False
- - host: foobar.io
- + host: hexlet.io
- - proxy: 123.234.42.22
- - timeout: 50
- + timeout: 20
- + verbose : True
-}
+  - follow: false
+  - host: foobar.io
+  + host: hexlet.io
+  - proxy: 123.234.42.22
+  - timeout: 50
+  + timeout: 20
+  + verbose: true
+ }
